@@ -296,6 +296,12 @@ public class Main {
 		label24.setForeground(Color.white);
 		frame.add(label24);
 		
+		JLabel check2400 = new JLabel();
+		check2400.setText("*");
+		check2400.setForeground(Color.red);
+		check2400.setBounds(107, 860, 5, 20);
+		frame.add(check2400);
+		
 		JCheckBox check1 = new JCheckBox("Cash");
 		check1.setBounds(125, 860, 80, 20);
 		check1.setBackground(Color.DARK_GRAY);
@@ -366,6 +372,9 @@ public class Main {
 				}
 				else if(len != 11) {
 					JOptionPane.showInternalMessageDialog(null, "Enter a Valid Mobile Number.", "Invalid!", JOptionPane.WARNING_MESSAGE);
+				}
+				else if(!check1.isSelected() && !check2.isSelected() && !check3.isSelected()) {
+					JOptionPane.showInternalMessageDialog(null, "Select a payment method!.", "Warning!", JOptionPane.WARNING_MESSAGE);
 				}
 				else {
 					
@@ -470,9 +479,7 @@ public class Main {
 	                    
 	                    connection.close();
 	                }
-//					catch (java.sql.SQLIntegrityConstraintViolationException ex) {
-//						JOptionPane.showInternalMessageDialog(null, "You have registered already!", "Error!", JOptionPane.WARNING_MESSAGE);
-//					}
+
 					catch (Exception exception) {
 	                    exception.printStackTrace();
 	                }
